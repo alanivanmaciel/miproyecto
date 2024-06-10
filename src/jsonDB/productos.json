@@ -1,0 +1,102 @@
+[
+  {
+    "title": "Zapatillas",
+    "description": "Zapatillas Deportivas Negras.",
+    "price": 50,
+    "thumbnail": "/images/ZapatillasN.jpg",
+    "code": "Z003",
+    "stock": 10,
+    "id": 4
+  },
+  {
+    "title": "Mochila",
+    "description": "Mochila Negra con Compartimento para Laptop.",
+    "price": 40,
+    "thumbnail": "/images/MochilaN.jpg",
+    "code": "M005",
+    "stock": 12,
+    "id": 6
+  },
+  {
+    "title": "Sweater",
+    "description": "Sweater Gris Cuello Redondo.",
+    "price": 35,
+    "thumbnail": "/images/SweaterG.jpg",
+    "code": "SW006",
+    "stock": 18,
+    "id": 7
+  },
+  {
+    "title": "Chaqueta",
+    "description": "Chaqueta de Cuero Marrón.",
+    "price": 50,
+    "thumbnail": "/images/ChaquetaMarron.jpg",
+    "code": "C016",
+    "stock": 15,
+    "id": 8
+  },
+  {
+    "title": "Bufanda",
+    "description": "Bufanda de Lana Gris a Rayas.",
+    "price": 18,
+    "thumbnail": "/images/BufandaGris.jpg",
+    "code": "B017",
+    "stock": 22,
+    "id": 9
+  },
+  {
+    "title": "Remera",
+    "description": "Remera Gris",
+    "price": "12",
+    "thumbnail": "/images/remeraGris.jpg",
+    "code": "R009",
+    "stock": "11",
+    "category": "Indumentaria",
+    "id": 10,
+    "status": true
+  },
+  {
+    "title": "Remera",
+    "description": "Remera Negra",
+    "price": "12",
+    "thumbnail": "/images/remeraGris.jpg",
+    "code": "R012",
+    "stock": "11",
+    "category": "Indumentaria",
+    "id": 11,
+    "status": true
+  },
+  {
+    "title": "Remera",
+    "description": "Remera Negra",
+    "price": "23",
+    "thumbnail": "/images/remeranegra.jpg",
+    "code": "R001",
+    "stock": "22",
+    "category": "Indumentaria",
+    "id": 12,
+    "status": true
+  },
+  {
+    "title": "remer",
+    "description": "remer",
+    "price": "123123",
+    "thumbnail": "adsasda",
+    "code": "adsad1",
+    "stock": "32",
+    "category": "adadsa",
+    "id": 13,
+    "status": true
+  },
+  {
+    "title": "remer",
+    "description": "remer",
+    "price": "123123",
+    "thumbnail": "adsasda",
+    "code": "adsad11",
+    "stock": "32",
+    "category": "adadsa",
+    "id": 14,
+    "status": true
+  }
+]

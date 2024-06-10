@@ -1,0 +1,14 @@
+<main>
+    <div class="register-card">
+        <h2>Register</h2>
+        <form action="/api/sessions/register" method="post" class="register-form" enctype="multipart/form-data">
+            <input type="text" name="firstname" placeholder="Ingrese su nombre">
+            <input type="text" name="lastname" placeholder="Ingrese su apellido">
+            <input type="text" name="email" placeholder="Ingrese su email" required>
+            <input type="text" name="age" placeholder="Ingrese su edad">
+            <input type="password" name="password" placeholder="Ingrese su password" required>
+            <input type="file" name="profile" id="file">
+            <button>Enviar</button>
+        </form>
+    </div>
+</main>

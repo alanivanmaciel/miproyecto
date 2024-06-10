@@ -1,0 +1,123 @@
+paths:
+  /api/products/:
+    get:
+      summary: Obtiene todos los productos
+      tags:
+        - Products
+      responses:
+        "200":
+          description: Obtiene todos los Productos
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Product'
+        "500":
+          description: Error interno del server, usualmente  algo malo en el servidor
+    post: 
+      summary: Endpoint para la creacion de nuevos productos.
+      tags:
+        - Products
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/requestBodies/createProduct'
+      responses:
+        "201":
+          description: El producto fue creado correctamente.
+  /{pid}:
+    get:
+      sumary: Obtiene un producto por id
+      tags: 
+        - Products
+      parameters:
+        - name: pid
+          in: path
+          required: true
+          description: El ID del producto llamado PID que desea solicitar
+          schema: 
+            type: string
+      responses:
+        "200":
+          description: El producto fue obtenido correctamente.
+          content: 
+            application/json: 
+              schema: 
+                $ref: '#/components/schemas/Product'
+components: 
+  schemas:
+    Product:
+      type: object
+      properties:
+        _id:
+          type: ObjectId
+          description: ID autogenerado por MongoDB
+        title:
+          type: String
+          description: Nombre del producto
+        description:
+          type: String
+          description: Descripcion del producto
+        price:
+          type: Numbre
+          description: Precio unitario del producto
+        thumbnail:
+          type: String
+          description: Direccion donde se ubica la imagen del producto
+        code:
+          type: String
+          description: Codigo unico del producto
+        stock:
+          type: Number
+          description: Cantidad de stock disponible del producto
+        category:
+          type: String
+          description: Categoria del producto
+      example:
+        _id: ObjectId('65a9a21439e646a12c45ce32')
+        title: Remera
+        description: Remera Negra Adidas
+        price: 123
+        thumbnail: /images/remeraNegra.jpg 
+        code: R001
+        stock: 30
+        category: Indumentaria 
+  requestBodies:
+    createProduct:
+      type: object
+      properties:
+        title:
+          type: String
+          description: Nombre del producto
+        description:
+          type: String
+          description: Descripcion del producto
+        price:
+          type: Numbre
+          description: Precio unitario del producto
+        thumbnail:
+          type: String
+          description: Direccion donde se ubica la imagen del producto
+        code:
+          type: String
+          description: Codigo unico del producto
+        stock:
+          type: Number
+          description: Cantidad de stock disponible del producto
+        category:
+          type: String
+          description: Categoria del producto     
+      example:
+        title: Remera 
+        description: Remera Negra Adidas Swa
+        price: 123
+        thumbnail: /images/remeraNegra.jpg 
+        code: R001
+        stock: 30
+        category: Indumentaria
+
+
+

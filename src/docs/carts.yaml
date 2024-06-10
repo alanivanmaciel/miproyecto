@@ -1,0 +1,174 @@
+paths:
+  /api/carts/{cid}:
+    get:
+      summary: Obtiene el carrito mediante un ID.
+      tags:
+        - Cart
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: El ID del carrito que se desea obtener.
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Carrito encontrado.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+    delete:
+      summary: Elimina un carrito.
+      tags:
+        - Cart
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: El ID del carrito que se desea eliminar.
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Carrito eliminado correctamente.
+
+  /api/carts/{cid}/purchase:
+    get:
+      summary: Realiza la compra del carrito mediante su ID.
+      tags:
+        - Cart
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: El ID del carrito que se desea comprar.
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Compra realizada exitosamente.
+
+  /api/carts/:
+    post:
+      summary: Crea un nuevo carrito.
+      tags:
+        - Cart
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/createCart'
+      responses:
+        "201":
+          description: Carrito creado correctamente.
+
+  /api/carts/{cid}/product/{pid}:
+    put:
+      summary: Agrega un producto al carrito.
+      tags:
+        - Cart
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: El ID del carrito al que se desea agregar el producto.
+          schema:
+            type: string
+        - name: pid
+          in: path
+          required: true
+          description: El ID del producto que se desea agregar al carrito.
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Producto agregado correctamente.
+
+  /api/carts/{cid}/products/{pid}:
+    put:
+      summary: Actualiza la cantidad de un producto en el carrito.
+      tags:
+        - Cart
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: El ID del carrito al que se desea actualizar la cantidad del producto.
+          schema:
+            type: string
+        - name: pid
+          in: path
+          required: true
+          description: El ID del producto cuya cantidad se desea actualizar en el carrito.
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Cantidad de producto actualizada correctamente.
+    delete:
+      summary: Elimina un producto de un carrito.
+      tags:
+        - Cart
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: El ID del carrito del que se desea eliminar el producto.
+          schema:
+            type: string
+        - name: pid
+          in: path
+          required: true
+          description: El ID del producto que se desea eliminar del carrito.
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Producto eliminado correctamente.
+    
+
+components:
+  schemas:
+    Cart:
+      type: object
+      properties:
+        products:
+          type: array
+          items:
+            type: object
+            properties:
+              product:
+                type: string
+                format: ObjectId
+                description: ID del producto referenciado en la colección "products"
+              quantity:
+                type: number
+                description: Cantidad del producto en el carrito
+        user:
+          type: string
+          description: Email del usuario asociado al carrito.
+      example:
+        products:
+          - product: "65a9a21439e646a12c45ce32"
+            quantity: 2
+          - product: "65a9a21439e646a12c45ce33"
+            quantity: 1
+        user: 'a@gmail.com'
+
+  requestBodies:
+    createCart:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              user:
+                type: string
+                description: Usuario al que se le asignará el carrito.
+          example:
+            user: a@gmail.com
+
+      

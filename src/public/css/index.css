@@ -1,0 +1,381 @@
+/*************COMPONENTES*************/
+
+body {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  color: white;
+  background-color: #151515;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  /* margin-top: 10px; */
+  /* padding: 8px 16px; */
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  /* background-color: #C9D1D9; */
+  background-color: gray;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2e75c7;
+  color: white;
+}
+
+.disabled {
+  display: none;
+}
+
+.collapsed {
+  width: 0;
+}
+
+.buttonHref a,
+.buttonHref {
+  text-decoration: none;
+  width: 136px;
+  color: #ffffff;
+}
+
+.container {
+  padding: 60px 10px 10px 150px;
+}
+
+/*************COMPONENTES*************/
+
+/*************LOGIN*************/
+.login-card,
+.register-card {
+  position: relative;
+  z-index: 3;
+
+  width: 50%;
+
+  margin: 50px 30px;
+  padding: 70px 30px 44px;
+  border-radius: 1.25rem;
+  background-color: gray;
+  text-align: center;
+}
+
+@media (width >=500px) {
+
+  .login-card,
+  .register-card {
+    margin: 30px 0px;
+    width: 400px;
+    padding: 70px 30px 44px;
+  }
+}
+
+.login-card h2,
+.register-card h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: white;
+}
+
+.login-form,
+.register-form {
+  width: 100%;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.login-form>input,
+.register-form>input {
+  height: 56px;
+  border: 2px solid #ebebeb;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 0 16px;
+  background-color: gray;
+}
+
+.register-form input:-webkit-autofill,
+.register-form input[type="text"],
+.register-form input[type="password"],
+.register-form input::placeholder,
+.login-form input:-webkit-autofill,
+.login-form input[type="text"],
+.login-form input[type="password"],
+.login-form input::placeholder {
+  color: white;
+  background-color: gray;
+}
+
+.login-form>button,
+.register-form>button {
+  cursor: pointer;
+  width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  border-radius: 0.5rem;
+  background: #216ce7;
+  color: #f9f9f9;
+  border: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 2px;
+  transition: all 0.375s;
+}
+
+.login-form>a {
+  color: white;
+  font-size: 1rem;
+  text-align: left;
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+
+/*************LOGIN*************/
+
+/*************USERS*************/
+.Users {
+  text-align: center;
+}
+
+#users {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tableUsers {
+  background-color: gray;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.tableUsers thead {
+  padding: 30px;
+}
+
+.tableUsers tbody {
+  padding-top: 20px;
+}
+
+.tableUsers th,
+.tableUsers td {
+  padding: 8px;
+  text-align: center;
+}
+
+.center-content td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.center-content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-content a {
+  display: inline-block;
+}
+
+
+/*************USERS*************/
+
+.addProduct {
+  padding: 10px;
+  text-align: center;
+}
+
+/*************Chat*************/
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vh;
+}
+
+.chatHeader {
+  position: sticky;
+  top: 0;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+#messageLogs {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.chatInput {
+  position: sticky;
+  bottom: 0;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.chatInput input {
+
+  width: 100%;
+}
+
+
+.custom-toast {
+  font-size: 8px;
+}
+
+/*************Chat*************/
+
+
+
+/*************Menu Navbar**************/
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #151515;
+  color: white;
+  padding: 15px 15px 15px 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  align-items: center;
+  border-bottom: 1px solid white;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navUser {
+  padding: 0px 30px;
+  align-items: center;
+}
+
+/*************Menu Navbar**************/
+
+.sidebar {
+  background-color: #151515;
+  position: fixed;
+  top: 45px;
+  left: 0;
+  width: 150px;
+  height: 100%;
+  overflow-y: auto;
+  text-align: center;
+  border-right: 0.5px solid white;
+  padding: 5px 5px 0px 0px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar ul li:hover {
+  background-color: gray;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.sidebar ul li a {
+  display: block;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar ul li svg {
+  margin-right: 5px;
+}
+
+
+.selected {
+  background-color: gray;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+
+
+
+
+
+.product-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.product-image {
+  flex: 1;
+  max-width: 500px;
+  margin-right: 20px;
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product-details {
+  flex: 2;
+  max-width: 500px;
+}
+
+.product-details h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.product-details p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.product-details .price {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
