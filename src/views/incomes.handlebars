@@ -1,6 +1,4 @@
 <div class="contenedor">
-  
-  <input type="hidden" name="owner" id="user" value="{{user}}">
     <nav class="sidebar">
     <div class="sidebar-top-wrapper">
       <div class="sidebar-top">
@@ -188,7 +186,7 @@
         <div class="online__status"></div>
       </div> --}}
       <div class="avatar__name hide">
-        <div class="user-name">{{fullname}}</div>
+        <div class="user-name">Natalia Bartošová</div>
         <div class="email">{{user}}</div>
       </div>
       <a href="/api/sessions/logout">
@@ -205,38 +203,34 @@
   </nav>
     <main>
         <div class="container">
-
-            <div class="chatContainer">
-                <div class="chatHeader">
-                    <h1>Chat</h1>
-                    {{!-- <h2 id="user">{{user}}</h2> --}}
-                </div>
-                <div id="messageLogs">
-                    {{#each messages}}
-                    <div class="{{class}}">
-                        {{!-- <li>{{user}}: {{message}} - {{hora}}</li><br> --}}
-                        {{message}}
-                        <span class="metadata">
-                        <span class="time">{{hora}}</span>
-                        </span>
-
-                    </div>
+        <h1>Ingresos</h1>
+            <table class="tableIncomes">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Concepto</th>
+                        <th>Monto</th>
+                        <th>Detalle</th>
+                        <th>Mes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each results}}
+                    <tr>
+                        <td>{{created}}</td>
+                        <td>{{category}}</td>
+                        <td>${{amount}}</td>
+                        <td>{{description}}</td>
+                        <td>{{month}}</td>
+                    </tr>
                     {{/each}}
-                </div>
-                <div class="chatInput">
-                    <input type="text" id="chatbox">
-                </div>
-
-            </div>
+                </tbody>
+            </table>
         </div>
-
     </main>
-    <footer>
-
-    </footer>
-
 </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.2/dist/sweetalert2.all.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
-<script src="/js/messageLogs.js"></script>
+<script src="/js/index.js"></script>

@@ -26,7 +26,6 @@ class SessionController {
             }
             //validar que no exista email FALTA
             
-            const createCart = await this.cartService.createCart({user: email})
             const newUser = {
                 firstname,
                 lastname,
@@ -41,7 +40,7 @@ class SessionController {
             const emailConfigObject = {
                 service: `Bienvenido usuario`,
                 to: result.email,
-                subject: 'Bienvenido a la App de Eccomerce',
+                subject: 'Bienvenido a la App de Finanzas',
                 html: `<h1>Bienvenido ${result.firstname}!</h1>`
             }
             sendMail(emailConfigObject)
@@ -118,15 +117,13 @@ class SessionController {
     }
 
     restorePassword = async (req, res) => {
-        logger.info('restore');
         try {
             const { email } = req.body
-            logger.info(email)
             const user = await this.userService.getUser({ email })
 
             if (!user) return res.status(401).send({ status: 'error', message: 'El email ingresado no existe.' })
             const emailParams = {
-                service: `Soporte Eccomerce`,
+                service: `Soporte Finanzas`,
                 to: email,
                 subject: `Restablecimiento de contraseña`,
                 html: `

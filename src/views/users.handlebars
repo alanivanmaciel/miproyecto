@@ -1,135 +1,270 @@
-<div>
-    <header>
-        <nav class="navbar">
-            <div>
-                <ul>
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="/api/users">Usuarios</a></li>
-                </ul>
-            </div>
-            <div class="navUser">
-                <ul>
-                    <li> {{user}}</li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <aside class="sidebar">
+<div class="contenedor">
+  <nav class="sidebar">
+    <div class="sidebar-top-wrapper">
+      <div class="sidebar-top">
+        <a href="/" class="logo__wrapper">
+          <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12.2796 3.71579C12.097 3.66261 11.903 3.66261 11.7203 3.71579C11.6678 3.7311 11.5754 3.7694 11.3789 3.91817C11.1723 4.07463 10.9193 4.29855 10.5251 4.64896L5.28544 9.3064C4.64309 9.87739 4.46099 10.0496 4.33439 10.24C4.21261 10.4232 4.12189 10.6252 4.06588 10.8379C4.00765 11.0591 3.99995 11.3095 3.99995 12.169V17.17C3.99995 18.041 4.00076 18.6331 4.03874 19.0905C4.07573 19.536 4.14275 19.7634 4.22513 19.9219C4.41488 20.2872 4.71272 20.5851 5.07801 20.7748C5.23658 20.8572 5.46397 20.9242 5.90941 20.9612C6.36681 20.9992 6.95893 21 7.82995 21H7.99995V18C7.99995 15.7909 9.79081 14 12 14C14.2091 14 16 15.7909 16 18V21H16.17C17.041 21 17.6331 20.9992 18.0905 20.9612C18.5359 20.9242 18.7633 20.8572 18.9219 20.7748C19.2872 20.5851 19.585 20.2872 19.7748 19.9219C19.8572 19.7634 19.9242 19.536 19.9612 19.0905C19.9991 18.6331 20 18.041 20 17.17V12.169C20 11.3095 19.9923 11.0591 19.934 10.8379C19.878 10.6252 19.7873 10.4232 19.6655 10.24C19.5389 10.0496 19.3568 9.87739 18.7145 9.3064L13.4748 4.64896C13.0806 4.29855 12.8276 4.07463 12.621 3.91817C12.4245 3.7694 12.3321 3.7311 12.2796 3.71579ZM11.1611 1.79556C11.709 1.63602 12.2909 1.63602 12.8388 1.79556C13.2189 1.90627 13.5341 2.10095 13.8282 2.32363C14.1052 2.53335 14.4172 2.81064 14.7764 3.12995L20.0432 7.81159C20.0716 7.83679 20.0995 7.86165 20.1272 7.88619C20.6489 8.34941 21.0429 8.69935 21.3311 9.13277C21.5746 9.49916 21.7561 9.90321 21.8681 10.3287C22.0006 10.832 22.0004 11.359 22 12.0566C22 12.0936 22 12.131 22 12.169V17.212C22 18.0305 22 18.7061 21.9543 19.2561C21.9069 19.8274 21.805 20.3523 21.5496 20.8439C21.1701 21.5745 20.5744 22.1701 19.8439 22.5496C19.3522 22.805 18.8274 22.9069 18.256 22.9543C17.706 23 17.0305 23 16.2119 23H15.805C15.7972 23 15.7894 23 15.7814 23C15.6603 23 15.5157 23.0001 15.3883 22.9895C15.2406 22.9773 15.0292 22.9458 14.8085 22.8311C14.5345 22.6888 14.3111 22.4654 14.1688 22.1915C14.0542 21.9707 14.0227 21.7593 14.0104 21.6116C13.9998 21.4843 13.9999 21.3396 13.9999 21.2185L14 18C14 16.8954 13.1045 16 12 16C10.8954 16 9.99995 16.8954 9.99995 18L9.99996 21.2185C10 21.3396 10.0001 21.4843 9.98949 21.6116C9.97722 21.7593 9.94572 21.9707 9.83107 22.1915C9.68876 22.4654 9.46538 22.6888 9.19142 22.8311C8.9707 22.9458 8.75929 22.9773 8.6116 22.9895C8.48423 23.0001 8.33959 23 8.21847 23C8.21053 23 8.20268 23 8.19495 23H7.78798C6.96944 23 6.29389 23 5.74388 22.9543C5.17253 22.9069 4.64769 22.805 4.15605 22.5496C3.42548 22.1701 2.8298 21.5745 2.4503 20.8439C2.19492 20.3523 2.09305 19.8274 2.0456 19.2561C1.99993 18.7061 1.99994 18.0305 1.99995 17.212L1.99995 12.169C1.99995 12.131 1.99993 12.0936 1.99992 12.0566C1.99955 11.359 1.99928 10.832 2.1318 10.3287C2.24383 9.90321 2.42528 9.49916 2.66884 9.13277C2.95696 8.69935 3.35105 8.34941 3.87272 7.8862C3.90036 7.86165 3.92835 7.83679 3.95671 7.81159L9.22354 3.12996C9.58274 2.81064 9.89467 2.53335 10.1717 2.32363C10.4658 2.10095 10.781 1.90627 11.1611 1.79556Z"
+                fill="#ffffff"></path>
+            </g>
+          </svg>
+          <span class="hide company-name">
+            Inicio
+          </span>
+        </a>
+      </div>
+      <button class="expand-btn" type="button">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.00979 2.72L10.3565 7.06667C10.8698 7.58 10.8698 8.42 10.3565 8.93333L6.00979 13.28"
+            stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+    <div class="sidebar-links-wrapper">
+      <div class="sidebar-links">
         <ul>
-            <li class="selected">
-                <a href="/api/users">
-                    <svg width="15px" height="15px" viewBox="0 -1 24 24" id="meteor-icon-kit__solid-users" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M7.99978 -0.000028C11.3134 -0.000028 13.9996 2.68619 13.9996 5.9998C13.9996 9.3134 11.3134 11.9996 7.99978 11.9996C4.68616 11.9996 1.99994 9.3134 1.99994 5.9998C1.99994 2.68619 4.68616 -0.000028 7.99978 -0.000028zM0.999972 22.0984C0.447703 22.0984 0 21.6507 0 21.0984V18.9994C0 16.2381 2.23851 13.9996 4.99986 13.9996H11.0004C13.7617 13.9996 16.0003 16.2381 16.0003 18.9994V21.0984C16.0003 21.6507 15.5526 22.0984 15.0003 22.0984C14.448 22.0984 1.55224 22.0984 0.999972 22.0984zM13.7484 11.563C15.142 10.1233 15.9996 8.16172 15.9996 5.9998C15.9996 3.83789 15.142 1.87627 13.7484 0.43658C14.4436 0.15502 15.2034 -0.000028 15.9996 -0.000028C19.3132 -0.000028 21.9994 2.68619 21.9994 5.9998C21.9994 9.3134 19.3132 11.9996 15.9996 11.9996C15.2034 11.9996 14.4436 11.8446 13.7484 11.563zM15.8992 13.9996H19.0002C21.7615 13.9996 24 16.2381 24 18.9994V21.0984C24 21.6507 23.5523 22.0984 23.0001 22.0984H17.8295C17.94 21.7856 18.0002 21.449 18.0002 21.0984V18.9994C18.0002 17.0408 17.1958 15.2701 15.8992 13.9996z"
-                                fill="#ffffff"></path>
-                        </g>
-                    </svg>
-                    Usuarios</a>
-            </li>
-            <li>
-                <a href="/api/chat">
-                    <svg width="15px" height="15px" viewBox="0 0 24 24" id="meteor-icon-kit__solid-whatsapp" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M20.5129 3.4866C18.2882 1.24722 15.2597 -0.00837473 12.1032 4.20445e-05C5.54964 4.20445e-05 0.216056 5.33306 0.213776 11.8883C0.210977 13.9746 0.75841 16.0247 1.80085 17.8319L0.114014 23.9932L6.41672 22.34C8.15975 23.2898 10.1131 23.7874 12.0981 23.7874H12.1032C18.6556 23.7874 23.9897 18.4538 23.992 11.8986C24.0022 8.74248 22.7494 5.71347 20.5129 3.4866ZM17.5234 14.3755C17.2264 14.2267 15.7659 13.5085 15.4934 13.4064C15.2209 13.3044 15.0231 13.2576 14.8253 13.5552C14.6275 13.8528 14.058 14.5215 13.8847 14.7199C13.7114 14.9182 13.5381 14.9427 13.241 14.794C12.944 14.6452 11.9869 14.3316 10.8519 13.3198C9.96884 12.5319 9.36969 11.5594 9.19867 11.2618C9.02765 10.9642 9.18043 10.8057 9.32922 10.6552C9.46261 10.5224 9.62622 10.3086 9.77444 10.1348C9.92266 9.9609 9.97283 9.83776 10.0714 9.63938C10.1701 9.44099 10.121 9.26769 10.0469 9.1189C9.97283 8.97011 9.37824 7.50788 9.13083 6.9133C8.88969 6.3341 8.64513 6.4122 8.46271 6.40023C8.29169 6.39168 8.09102 6.38997 7.89264 6.38997C7.58822 6.39793 7.30097 6.53267 7.10024 6.76166C6.82831 7.05923 6.061 7.77752 6.061 9.23976C6.061 10.702 7.12532 12.1146 7.27354 12.313C7.42176 12.5114 9.36855 15.5117 12.3472 16.7989C12.9004 17.0375 13.4657 17.2468 14.0409 17.426C14.7523 17.654 15.3999 17.6204 15.9118 17.544C16.4819 17.4585 17.6694 16.8251 17.9173 16.1313C18.1653 15.4376 18.1648 14.8424 18.0884 14.7187C18.012 14.595 17.8204 14.5266 17.5234 14.3778V14.3755Z"
-                                fill="#ffffff"></path>
-                        </g>
-                    </svg>
-                    Chat</a>
-            </li>
-            <li>
-                <a href="/api/sessions/logout" id="logout">
-                    <svg width="15px" height="15px" viewBox="0 0 24 24" id="meteor-icon-kit__solid-sign-out" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M12 4.7708L3 3.2708V20.7294L12 19.2294V17.0001C12 16.1717 12.6716 15.5001 13.5 15.5001C14.3284 15.5001 15 16.1717 15 17.0001V19.653C15 20.8751 14.1165 21.9181 12.911 22.119L2.911 23.7856C2.77517 23.8083 2.6377 23.8196 2.5 23.8196C1.11929 23.8196 0 22.7004 0 21.3196V2.68057C0 2.54286 0.0113771 2.4054 0.0340152 2.26957C0.261003 0.907643 1.54907 -0.0124066 2.911 0.214581L12.911 1.88125C14.1165 2.08216 15 3.12513 15 4.34723V7.00011C15 7.82853 14.3284 8.50011 13.5 8.50011C12.6716 8.50011 12 7.82853 12 7.00011V4.7708ZM18.8787 13.5001H7C6.17157 13.5001 5.5 12.8285 5.5 12.0001C5.5 11.1717 6.17157 10.5001 7 10.5001H18.8787L18.4393 10.0608C17.8536 9.47498 17.8536 8.52523 18.4393 7.93945C19.0251 7.35366 19.9749 7.35366 20.5607 7.93945L23.5607 10.9394C24.1464 11.5252 24.1464 12.475 23.5607 13.0608L20.5607 16.0608C19.9749 16.6466 19.0251 16.6466 18.4393 16.0608C17.8536 15.475 17.8536 14.5252 18.4393 13.9394L18.8787 13.5001Z"
-                                fill="#ffffff"></path>
-                        </g>
-                    </svg>
-                    Cerrar Sesion</a>
-            </li>
+          {{!-- <li>
+            <a href="/" title="Home">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                class="icon icon-tabler icons-tabler-filled icon-tabler-layout-dashboard">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M9 3a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2zm0 12a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2zm10 -4a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2zm0 -8a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2z" />
+              </svg>
+              <span class="link hide">Dashboard</span>
+            </a>
+          </li> --}}
+
+
+          {{!-- <li>
+            <a href="#bank-accounts" title="Bank Accounts" class="tooltip main-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-building-bank">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M3 21l18 0" />
+                <path d="M3 10l18 0" />
+                <path d="M5 6l7 -3l7 3" />
+                <path d="M4 10l0 11" />
+                <path d="M20 10l0 11" />
+                <path d="M8 14l0 3" />
+                <path d="M12 14l0 3" />
+                <path d="M16 14l0 3" />
+              </svg>
+              <span class="link hide">Bank Accounts</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="hide expand-icon" width="44" height="44"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M9 6l6 6l-6 6" />
+              </svg>
+            </a>
+            <ul class="hide">
+              <li>
+                <a href="#income" title="Income">
+                  Income
+                </a>
+              </li>
+              <li>
+                <a href="#expenses" title="Expense">
+                  Expenses
+                </a>
+              </li>
+              <li>
+                <a href="#statements" title="Statements">
+                  Statements
+                </a>
+              </li>
+              <li>
+                <a href="#payouts" title="Payouts">
+                  Payouts
+                </a>
+              </li>
+              <li>
+                <a href="#statements" title="Statements">
+                  Statements
+                </a>
+              </li>
+            </ul>
+          </li> --}}
+
+
+          {{!-- <li>
+            <a href="#transfers" title="Transfers">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-repeat">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M4 12v-3a3 3 0 0 1 3 -3h13m-3 -3l3 3l-3 3" />
+                <path d="M20 12v3a3 3 0 0 1 -3 3h-13m3 3l-3 -3l3 -3" />
+              </svg>
+              <span class="link hide">Transfers</span>
+            </a>
+          </li> --}}
+          <li>
+            <a href="/api/users" title="Users">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g id="User / Users">
+                    <path id="Vector"
+                      d="M21 19.9999C21 18.2583 19.3304 16.7767 17 16.2275M15 20C15 17.7909 12.3137 16 9 16C5.68629 16 3 17.7909 3 20M15 13C17.2091 13 19 11.2091 19 9C19 6.79086 17.2091 5 15 5M9 13C6.79086 13 5 11.2091 5 9C5 6.79086 6.79086 5 9 5C11.2091 5 13 6.79086 13 9C13 11.2091 11.2091 13 9 13Z"
+                      stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </g>
+                </g>
+              </svg>
+              <span class="link hide">Usuarios</span>
+            </a>
+          </li>
+          <li>
+            <a href="/api/chat" title="Chat">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M6.014 8.00613C6.12827 7.1024 7.30277 5.87414 8.23488 6.01043L8.23339 6.00894C9.14051 6.18132 9.85859 7.74261 10.2635 8.44465C10.5504 8.95402 10.3641 9.4701 10.0965 9.68787C9.7355 9.97883 9.17099 10.3803 9.28943 10.7834C9.5 11.5 12 14 13.2296 14.7107C13.695 14.9797 14.0325 14.2702 14.3207 13.9067C14.5301 13.6271 15.0466 13.46 15.5548 13.736C16.3138 14.178 17.0288 14.6917 17.69 15.27C18.0202 15.546 18.0977 15.9539 17.8689 16.385C17.4659 17.1443 16.3003 18.1456 15.4542 17.9421C13.9764 17.5868 8 15.27 6.08033 8.55801C5.97237 8.24048 5.99955 8.12044 6.014 8.00613Z"
+                    fill="#ffffff"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12 23C10.7764 23 10.0994 22.8687 9 22.5L6.89443 23.5528C5.56462 24.2177 4 23.2507 4 21.7639V19.5C1.84655 17.492 1 15.1767 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23ZM6 18.6303L5.36395 18.0372C3.69087 16.4772 3 14.7331 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C11.0143 21 10.552 20.911 9.63595 20.6038L8.84847 20.3397L6 21.7639V18.6303Z"
+                    fill="#ffffff"></path>
+                </g>
+              </svg>
+              <span class="link hide">Chat</span>
+            </a>
+          </li>
+          <li>
+            <a href="/api/transaction" title="Transaction">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-building-bank">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M3 21l18 0" />
+                <path d="M3 10l18 0" />
+                <path d="M5 6l7 -3l7 3" />
+                <path d="M4 10l0 11" />
+                <path d="M20 10l0 11" />
+                <path d="M8 14l0 3" />
+                <path d="M12 14l0 3" />
+                <path d="M16 14l0 3" />
+              </svg>
+              <span class="link hide">Ingresos</span>
+            </a>
+          </li>
+          <li>
+            <a href="/api/config" title="config">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <g id="Interface / Settings_Future">
+                    <g id="Vector">
+                      <path
+                        d="M13.6006 21.0761L19.0608 17.9236C19.6437 17.5871 19.9346 17.4188 20.1465 17.1834C20.3341 16.9751 20.4759 16.7297 20.5625 16.4632C20.6602 16.1626 20.6602 15.8267 20.6602 15.1568V8.84268C20.6602 8.17277 20.6602 7.83694 20.5625 7.53638C20.4759 7.26982 20.3341 7.02428 20.1465 6.816C19.9355 6.58161 19.6453 6.41405 19.0674 6.08043L13.5996 2.92359C13.0167 2.58706 12.7259 2.41913 12.416 2.35328C12.1419 2.295 11.8584 2.295 11.5843 2.35328C11.2744 2.41914 10.9826 2.58706 10.3997 2.92359L4.93843 6.07666C4.35623 6.41279 4.06535 6.58073 3.85352 6.816C3.66597 7.02428 3.52434 7.26982 3.43773 7.53638C3.33984 7.83765 3.33984 8.17436 3.33984 8.84742V15.1524C3.33984 15.8254 3.33984 16.1619 3.43773 16.4632C3.52434 16.7297 3.66597 16.9751 3.85352 17.1834C4.06548 17.4188 4.35657 17.5871 4.93945 17.9236L10.3997 21.0761C10.9826 21.4126 11.2744 21.5806 11.5843 21.6465C11.8584 21.7047 12.1419 21.7047 12.416 21.6465C12.7259 21.5806 13.0177 21.4126 13.6006 21.0761Z"
+                        stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <path
+                        d="M9 11.9998C9 13.6566 10.3431 14.9998 12 14.9998C13.6569 14.9998 15 13.6566 15 11.9998C15 10.3429 13.6569 8.99976 12 8.99976C10.3431 8.99976 9 10.3429 9 11.9998Z"
+                        stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+              <span class="link hide">Configuracion</span>
+            </a>
+          </li>
         </ul>
-    </aside>
-    <main>
-        <div class="container">
-            <div class="Users">
-                <h1>Usuarios:</h1>
-                <div id="users">
-                    <table class="tableUsers">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Nombre</th>
-                                <th>Apellido</th>
-                                <th>Email</th>
-                                <th>Perfil</th>
-                                <th>Estado</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {{#each users}}
-                            <tr class="center-content">
-                                <td><img src="{{imgProfile}}" alt="Profile Image"
-                                        style="width: 40px; height: 40px; object-fit: cover; border-radius: 20%;"></td>
-                                <td>{{firstname}}</td>
-                                <td>{{lastname}}</td>
-                                <td>{{email}}</td>
-                                <td>{{role}}</td>
-                                <td>{{isActive}}</td>
-                                <td>
-                                    <button type="button" onclick="editUser('{{id}}')"><svg width="30px" height="30px"
-                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                stroke-linejoin="round"></g>
-                                            <g id="SVGRepo_iconCarrier">
-                                                <path
-                                                    d="M13.877 3.123l3.001 3.002.5-.5a2.123 2.123 0 10-3.002-3.002l-.5.5zM15.5 7.5l-3.002-3.002-9.524 9.525L2 17.999l3.976-.974L15.5 7.5z"
-                                                    fill="#ffffff"></path>
-                                            </g>
-                                        </svg></button>
-                                    <button type="button" onclick="deleteUser('{{id}}')"><svg width="30px" height="30px"
-                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                                stroke-linejoin="round"></g>
-                                            <g id="SVGRepo_iconCarrier">
-                                                <path
-                                                    d="M8 3.994C8 2.893 8.895 2 10 2s2 .893 2 1.994h4c.552 0 1 .446 1 .997 0 .55-.448.997-1 .997H4c-.552 0-1-.447-1-.997s.448-.997 1-.997h4zM5 14.508V8h2v6.508a.5.5 0 00.5.498H9V8h2v7.006h1.5a.5.5 0 00.5-.498V8h2v6.508A2.496 2.496 0 0112.5 17h-5C6.12 17 5 15.884 5 14.508z"
-                                                    fill="#ffffff"></path>
-                                            </g>
-                                        </svg></button>
-                                </td>
-                                <td>
-                                    {{#if roleUpdate}}
-                                    <button class="buttonHref"><a href="/api/users/premium/{{id}}">Update
-                                            {{roleUpdate}}</a></button>
-                                    {{/if}}
-                                </td>
-                            </tr>
-                            {{/each}}
-                        </tbody>
-                    </table>
-                </div>
-                <label id="page">{{page}}</label>
-            </div>
+      </div>
+    </div>
+    <div class="sidebar__profile">
+      {{!-- <div class="avatar__wrapper">
+        <img class="avatar" src="assets/natalia.jpg" alt="Joe Doe Picture">
+        <div class="online__status"></div>
+      </div> --}}
+      <div class="avatar__name hide">
+        <div class="user-name">{{fullname}}</div>
+        <div class="email">{{user}}</div>
+      </div>
+      <a href="/api/sessions/logout">
+        <svg class="logout" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-logout">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
+          <path d="M9 12h12l-3 -3" />
+          <path d="M18 15l3 -3" />
+        </svg>
+      </a>
+    </div>
+  </nav>
+  <main>
+    <div class="container">
+      <div class="Users">
+        <h1>Usuarios:</h1>
+        <div id="users">
+          <table class="tableUsers">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Perfil</th>
+                <th>Estado</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each users}}
+              <tr class="center-content">
+                <td><img src="{{imgProfile}}" alt="Profile Image"
+                    style="width: 40px; height: 40px; object-fit: cover; border-radius: 20%;"></td>
+                <td>{{firstname}}</td>
+                <td>{{lastname}}</td>
+                <td>{{email}}</td>
+                <td>{{role}}</td>
+                <td>{{isActive}}</td>
+                <td>
+                  <button type="button" onclick="editUser('{{id}}')"><svg width="30px" height="30px" viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          d="M13.877 3.123l3.001 3.002.5-.5a2.123 2.123 0 10-3.002-3.002l-.5.5zM15.5 7.5l-3.002-3.002-9.524 9.525L2 17.999l3.976-.974L15.5 7.5z"
+                          fill="#ffffff"></path>
+                      </g>
+                    </svg></button>
+                  <button type="button" onclick="deleteUser(uid='{{id}}')"><svg width="30px" height="30px"
+                      viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <path
+                          d="M8 3.994C8 2.893 8.895 2 10 2s2 .893 2 1.994h4c.552 0 1 .446 1 .997 0 .55-.448.997-1 .997H4c-.552 0-1-.447-1-.997s.448-.997 1-.997h4zM5 14.508V8h2v6.508a.5.5 0 00.5.498H9V8h2v7.006h1.5a.5.5 0 00.5-.498V8h2v6.508A2.496 2.496 0 0112.5 17h-5C6.12 17 5 15.884 5 14.508z"
+                          fill="#ffffff"></path>
+                      </g>
+                    </svg></button>
+                </td>
+                <td>
+                  {{#if roleUpdate}}
+                  <button class="buttonHref"><a href="/api/users/premium/{{id}}">Update
+                      {{roleUpdate}}</a></button>
+                  {{/if}}
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
         </div>
-    </main>
-    <footer>
-
-    </footer>
-
+        <label id="page">{{page}}</label>
+      </div>
+    </div>
+  </main>
 </div>
 
 

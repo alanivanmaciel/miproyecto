@@ -1,5 +1,6 @@
 import { userRepository } from "../repositories/index.js"
 // import CartController from "./carts.controller.js"
+// import { extractCookie } from "../utils/extractToken.js";
 
 
 class UserController {
@@ -53,6 +54,7 @@ class UserController {
     }
 
     getUser = async (req, res) => {
+        
         const filter = req
         try {
             return await this.service.getUser(filter)
@@ -63,6 +65,7 @@ class UserController {
 
     deleteUser = async (req, res) => {
         try {
+            
             const uid = req
             return await this.service.deleteUser(uid)
         } catch (error) {

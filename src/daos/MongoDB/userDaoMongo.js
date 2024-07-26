@@ -22,7 +22,7 @@ class UserDaoMongo {
     }
 
     delete = (uid) => {
-        return this.usersModel.findByIdAndUpdate({ _id: uid }, { isActive: false })
+        return this.usersModel.findByIdAndDelete({ _id: uid })
     }
 }
 

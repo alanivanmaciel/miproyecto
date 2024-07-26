@@ -1,7 +1,5 @@
 <div class="contenedor">
-  
-  <input type="hidden" name="owner" id="user" value="{{user}}">
-    <nav class="sidebar">
+  <nav class="sidebar">
     <div class="sidebar-top-wrapper">
       <div class="sidebar-top">
         <a href="/" class="logo__wrapper">
@@ -203,40 +201,69 @@
       </a>
     </div>
   </nav>
-    <main>
-        <div class="container">
+  <main>
+    <div class="container">
 
-            <div class="chatContainer">
-                <div class="chatHeader">
-                    <h1>Chat</h1>
-                    {{!-- <h2 id="user">{{user}}</h2> --}}
-                </div>
-                <div id="messageLogs">
-                    {{#each messages}}
-                    <div class="{{class}}">
-                        {{!-- <li>{{user}}: {{message}} - {{hora}}</li><br> --}}
-                        {{message}}
-                        <span class="metadata">
-                        <span class="time">{{hora}}</span>
-                        </span>
+      <h2>Tipo de ingresos</h2>
 
-                    </div>
-                    {{/each}}
-                </div>
-                <div class="chatInput">
-                    <input type="text" id="chatbox">
-                </div>
+      <div class="tabs-container">
+        <ul class="tabs">
+          <li>
+            <a id="tab1" title="Categorias" href="#tab1">Ingreso</a>
+          </li>
+          <li>
+            <a id="tab2" title="Categorias2" href="#tab2">Egreso</a>
+          </li>
+          <li>
+            <a id="tab3" title="Categorias3" href="#tab3">test1</a>
+          </li>
+          <li>
+            <a id="tab4" title="Categorias4" href="#tab4">test2</a>
+          </li>
+        </ul>
+        <div class="tab-content-wrapper">
+          <section id="tab1-content" class="tab-content">
+            <h2>Categorias de ingresos</h2>
+            <input type="text" id="newCategory">
+            <button onclick="addCategory('{{user}}')">Añadir</button>
+            <div id="categories">
+
+              {{#each config}}
+              <div><button>
+
+                {{this}}
+              </button>
+              </div>
+              {{/each}}
 
             </div>
+          </section>
+          <section id="tab2-content" class="tab-content">
+            <h2>Reports</h2>
+            <p>
+              2
+            </p>
+          </section>
+          <section id="tab3-content" class="tab-content">
+            <h2>Performance</h2>
+            <p>
+              3
+            </p>
+          </section>
+          <section id="tab4-content" class="tab-content">
+            <h2>Funds</h2>
+            4
+          </section>
         </div>
+      </div>
 
-    </main>
-    <footer>
+    </div>
 
-    </footer>
 
+
+  </main>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.2/dist/sweetalert2.all.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
-<script src="/js/messageLogs.js"></script>
+<script src="/js/index.js"></script>

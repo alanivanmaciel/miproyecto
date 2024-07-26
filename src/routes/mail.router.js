@@ -3,9 +3,11 @@ import sendMail from "../utils/sendEmail.js";
 import sendSms from "../utils/sendSms.js";
 import { faker } from '@faker-js/faker'
 import compression from 'express-compression'
+import transactionDaoMongo from "../daos/MongoDB/transactionDaoMongo.js";
 
 
 const router = Router()
+const transaction = new transactionDaoMongo()
 
 export const generateProducts = () => {
     return {
@@ -50,7 +52,6 @@ router
         const html = '<div><h1>Es es un email de prueba</h1></div>'
 
         sendMail(to, subject, html)
-        //sendSms('Benja', 'Fernandez')
 
         res.send('Email enviado.')
 
@@ -75,7 +76,7 @@ router
         res.send(string)
     })
 
-    .get('/newTransaction', (req, res) => {
+    .get('/newTransaction', async (req, res) => {
         const user = 'test'
         const newTransaction = {
             user_id: user,
@@ -85,7 +86,10 @@ router
             description: 'Extras',
             month: 'Junio',
         }
-        res.send(newTransaction);
+
+        // const addTransaction = await transaction.create(newTransaction)
+
+        res.send(addTransaction);
         
     })
 

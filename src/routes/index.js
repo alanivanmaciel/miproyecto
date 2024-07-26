@@ -5,6 +5,8 @@ import sessionRouter from './session.router.js'
 import usersRouter from './users.router.js'
 import mailRouter from './mail.router.js'
 import loggerRouter from './loggertest.router.js'
+import transaction from './transaction.router.js'
+import config from './config.router.js'
 
 const router = Router();
 
@@ -12,6 +14,8 @@ router.use("/", viewsRouter);
 router.use('/api/sessions', sessionRouter)
 router.use("/api/chat", messageRouter);
 router.use('/api/users', usersRouter);
+router.use('/api/transaction', transaction)
+router.use('/api/config', config)
 router.use('/api', mailRouter)
 
 router.get('*', (req, res) => {
